@@ -11,6 +11,7 @@ function staticFileHandler(req, res) {
         });
         res.write(data);
         res.end();
+        return true;
     }else if(req.url.endsWith(".js")){
         const data = readFile(req.url);
         res.writeHead(200, {
@@ -18,6 +19,8 @@ function staticFileHandler(req, res) {
         });
         res.write(data);
         res.end();
+        return true;
+
     }else if(req.url.endsWith(".png")){
         const data = readFile(req.url);
         res.writeHead(200, {
@@ -25,6 +28,8 @@ function staticFileHandler(req, res) {
         });
         res.write(data);
         res.end();
+        return true;
+
     }else if(req.url.endsWith(".jpg")){
         const data = readFile(req.url);
         res.writeHead(200, {
@@ -32,6 +37,8 @@ function staticFileHandler(req, res) {
         });
         res.write(data);
         res.end();
+        return true;
+
     }else if(req.url.endsWith(".html")){
         const data = readFile(req.url);
         res.writeHead(200, {
@@ -39,8 +46,10 @@ function staticFileHandler(req, res) {
         });
         res.write(data);
         res.end();
+        return true;
+
     }
-    return true;
+    return false;
 }
 
 module.exports = {
