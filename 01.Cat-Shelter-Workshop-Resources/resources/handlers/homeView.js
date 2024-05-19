@@ -4,13 +4,16 @@ const path = require("path");
 
 const cats = require("../data/cats.json");
 const { readFile } = require("../util");
-let html = readFile(path.join(__dirname, "../views/home/index.html"));
+const { createCat } = require("./cats");
+const template = readFile(path.join(__dirname, "../views/home/index.html"));
 
 const homeView = (req, res) => {
+    
 
     res.writeHead(200, {
         "Content-Type": "text/html",
     });
+    let html = template.replace(`%%cats%%`, cats.map(createCat).join("\n"));
     res.write(html);
     res.end();
 
