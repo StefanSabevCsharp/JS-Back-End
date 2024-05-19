@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Tabby Cat",
+        "breed": "American Shorthair",
+        "description": "Friendly and playful. Loves to cuddle.",
+        "image": "https://example.com/tabby.jpg"
+    },
+    {
+        "name": "Calico Cat",
+        "breed": "American Shorthair",
+        "description": "Independent and feisty. Loves to play with toys.",
+        "image": "https://example.com/calico.jpg"
+    },
+    {
+        "name": "Tuxedo Cat",
+        "breed": "American Shorthair",
+        "description": "Elegant and sophisticated. Loves to be pampered.",
+        "image": "https://example.com/tuxedo.jpg"
+    },
+    {
+        "name": "Siamese Cat",
+        "breed": "Siamese",
+        "description": "Chatty and intelligent. Loves to be the center of attention.",
+        "image": "https://example.com/siamese.jpg"
+    },
+    {
+        "name": "Persian Cat",
+        "breed": "Persian",
+        "description": "Fluffy and regal. Loves to be groomed.",
+        "image": "https://example.com/persian.jpg"
+    }
+]
