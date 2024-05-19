@@ -3,12 +3,12 @@ const fs = require("fs");
 const path = require("path");
 
 const cats = require("../data/cats.json");
-const { readFile } = require("../util");
+const { readFile, readTemplate } = require("../util");
 const { createCat } = require("./cats");
-const template = readFile(path.join(__dirname, "../views/home/index.html"));
 
-const homeView = (req, res) => {
-    
+
+const homeView =  async (req, res) => {
+    const template =  await readTemplate("home/index")
 
     res.writeHead(200, {
         "Content-Type": "text/html",

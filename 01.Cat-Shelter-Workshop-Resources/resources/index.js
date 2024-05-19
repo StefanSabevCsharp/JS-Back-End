@@ -17,12 +17,7 @@ let routes = {
 
 const server = http
     .createServer((req, res) => {
-        // for (let handler of handlers) {
-        //     if (!handler(req, res)) {
-        //         break;
-        //     }
-        // }
-
+        
         const route = routes[req.url];
 
         if (typeof route === "function") {
