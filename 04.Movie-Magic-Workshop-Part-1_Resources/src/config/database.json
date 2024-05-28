@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "Inception",
+        "genre": "Science Fiction",
+        "director": "Christopher Nolan",
+        "year": 2010,
+        "imageURL": "/static/inception.jpg",
+        "rating": 4,
+        "description": "A thief enters people's dreams to steal their secrets."
+    },
+    {
+        "id": 1,
+        "title": "Jungle Cruise",
+        "genre": "Adventure",
+        "director": "Jaume Collet-Serra",
+        "year": 2021,
+        "imageURL": "/static/jungle_cruise.jpeg",
+        "rating": 4,
+        "description": "A riverboat captain takes a scientist and her brother on a dangerous journey through the Amazon jungle."
+    },
+    {
+        "id": 3,
+        "title": "Pulp Fiction",
+        "genre": "Crime",
+        "director": "Quentin Tarantino",
+        "year": 1994,
+        "imageURL": "https://example.com/pulp_fiction.jpg",
+        "rating": 4,
+        "description": "Various interconnected stories unfold in the criminal underworld of Los Angeles."
+    },
+    {
+        "id": 4,
+        "title": "The Dark Knight",
+        "genre": "Action",
+        "director": "Christopher Nolan",
+        "year": 2008,
+        "imageURL": "https://example.com/dark_knight.jpg",
+        "rating": 4,
+        "description": "Batman faces off against the Joker in a battle for Gotham City."
+    }
+]
