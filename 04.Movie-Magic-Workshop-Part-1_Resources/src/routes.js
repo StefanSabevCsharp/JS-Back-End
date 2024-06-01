@@ -3,6 +3,7 @@ const { homeController } = require('./controllers/homeController');
 const { createControllerGet } = require('./controllers/createController');
 const {detailsController} = require('./controllers/detailsController');
 const {searchController} = require('./controllers/searchController');
+const {aboutController} = require('./controllers/aboutController');
 
 const router = Router();
 
@@ -11,6 +12,7 @@ router.get("/",homeController);
 router.get("/create",createControllerGet);
 router.get("/details/:id",detailsController);
 router.get("/search",searchController);
+router.get("/about",aboutController);
 
 
 router.get("*",(req,res)=>{
