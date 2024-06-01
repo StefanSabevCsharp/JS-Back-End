@@ -38,5 +38,46 @@
         "imageURL": "/static/img/the-little-mermaid.jpg",
         "rating": 2,
         "description": "The youngest of King Triton's daughters, Ariel is a beautiful and spirited young mermaid with a thirst for adventure. Longing to find out more about the world beyond the sea, Ariel visits the surface and falls for the dashing Prince Eric. Following her heart, she makes a deal with the evil sea witch, Ursula, to experience life on land."
+    },
+    {
+        "id": 5,
+        "title": "The Enchanted Forest",
+        "genre": "Fantasy",
+        "director": "Isabella Woods",
+        "year": 1995,
+        "imageURL": "https://m.media-amazon.com/images/I/61H45kmWLOL._AC_UF1000,1000_QL80_.jpg",
+        "rating": 3.5,
+        "description": "In a mystical forest, a young girl discovers ancient secrets and magical creatures. She embarks on a quest to restore balance and protect her world from dark forces."
+    },
+    {
+        "id": 6,
+        "title": "Whispering Pines",
+        "genre": "Fantasy",
+        "director": "Elena Rivers",
+        "year": 2002,
+        "imageURL": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/470910941.jpg?k=9d13c6e46d0de57786eb64d23243053619d85b55dcad5428904751b6a2ae40a0&o=&hp=1",
+        "rating": 4,
+        "description": "Hidden deep within an ancient forest, a forgotten village holds the key to unraveling a magical prophecy. A young hero sets out on a perilous journey to uncover the truth."
+    },
+    {
+        "id": 7,
+        "title": "Moonlit Dreams",
+        "genre": "Fantasy",
+        "director": "Lucas Nightshade",
+        "year": 2010,
+        "imageURL": "https://m.media-amazon.com/images/I/71yGhZkG5JL._AC_UF1000,1000_QL80_.jpg",
+        "rating": 3,
+        "description": "Under the silver glow of the moon, a group of dreamweavers creates enchanting worlds. When their magic is threatened, they must unite to save their realm."
+    },
+    {
+        "id": 8,
+        "title": "Realm of Legends",
+        "genre": "Fantasy",
+        "director": "Olivia Stone",
+        "year": 2015,
+        "imageURL": "https://www.bigwinboard.com/wp-content/uploads/2020/10/realm-of-legends-slot-feat.jpg",
+        "rating": 4.5,
+        "description": "In a mythical land where legends come alive, a young scribe discovers her hidden powers. She embarks on a quest to restore balance and protect her world."
     }
+
 ]
