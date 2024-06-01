@@ -1,0 +1,6 @@
+
+module.exports = {
+    createControllerGet:  (req, res) => {
+        res.render('create');
+    }
+};
