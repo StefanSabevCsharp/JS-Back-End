@@ -9,4 +9,9 @@ const router = Router();
 router.get("/",homeController);
 router.get("/create",createControllerGet);
 router.get("/details/:id",detailsController)
+
+
+router.get("*",(req,res)=>{
+    res.render("404")
+})
 module.exports = {router};
