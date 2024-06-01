@@ -14,6 +14,7 @@ router.post("/create",createControllerPost);
 router.get("/details/:id",detailsController);
 router.get("/search",searchController);
 router.get("/about",aboutController);
+router.post("/search",searchController);
 
 
 
