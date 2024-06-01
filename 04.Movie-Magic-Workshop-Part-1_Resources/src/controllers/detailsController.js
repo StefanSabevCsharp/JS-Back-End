@@ -8,7 +8,7 @@ module.exports = {
             res.render("404"); 
             return;
         }
-        // Add stars to the movie object
+        
         let stars = "";
         for (let i = 0; i < movie.rating; i++) {
             stars += " ★";
