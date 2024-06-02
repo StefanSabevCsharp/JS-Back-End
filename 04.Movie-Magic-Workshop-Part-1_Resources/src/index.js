@@ -16,7 +16,7 @@ handlebarsConfig(app);
 app.use(router);
 
 mongoose
-    .connect("mongodb://localhost:27017/movies")
+    .connect("mongodb://localhost:27017/magic-movies")
     .then(() => {
         console.log("Connected to database");
     })

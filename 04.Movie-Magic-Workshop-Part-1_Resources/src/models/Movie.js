@@ -9,7 +9,7 @@ const movieSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    director:{
+    director: {
         type: String,
         required: true,
     },
@@ -30,7 +30,7 @@ const movieSchema = new mongoose.Schema({
         required: true,
         maxlength: 1000,
     },
-    imageUrl: {
+    imageURL: {
         type: String,
         required: true,
         // validator: function (value) {
@@ -39,5 +39,9 @@ const movieSchema = new mongoose.Schema({
         validator: function (value) {
             return value.match(/^http(s)?:\/\//);
         },
-    }
+    },
 });
+
+const Movie = mongoose.model("Movie", movieSchema);
+
+module.exports =  Movie ;
