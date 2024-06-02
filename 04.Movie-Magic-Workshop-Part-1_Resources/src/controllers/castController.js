@@ -1,4 +1,5 @@
 const Cast = require("../models/Cast");
+const { createCast } = require("../service/castService");
 
 module.exports = {
     createCastGet: (req, res) => {
@@ -8,7 +9,7 @@ module.exports = {
         const { name, age, born, imageURL } = req.body;
 
         try {
-            await Cast.create({ name, age, born, imageURL });
+          let newcast =   await createCast(name, age, born, imageURL);
             res.redirect("/");
         } catch (error) {
            console.log(error.message);

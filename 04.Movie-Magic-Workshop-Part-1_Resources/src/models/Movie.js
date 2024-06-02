@@ -40,6 +40,10 @@ const movieSchema = new mongoose.Schema({
             return value.match(/^http(s)?:\/\//);
         },
     },
+    cast:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Cast",
+    }]
 });
 
 const Movie = mongoose.model("Movie", movieSchema);
