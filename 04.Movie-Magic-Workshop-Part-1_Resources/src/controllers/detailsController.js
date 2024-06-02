@@ -11,7 +11,7 @@ module.exports = {
         
         let stars = "";
         for (let i = 0; i < movie.rating; i++) {
-            stars += " ★";
+            stars += " &#x2605";
         }
         movie.stars = stars;
 

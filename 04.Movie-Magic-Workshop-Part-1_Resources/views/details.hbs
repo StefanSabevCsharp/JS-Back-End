@@ -13,9 +13,8 @@
                         </div>
                         <div class="second-info">
                             <p class="card-year">Year: {{year}}</p>
-                            <p class="card-ranking">Rating:{{stars}}
-                                
-                                {{!-- <span id="stars">&#x2605; &#x2605; &#x2605; &#x2605;</span></p> --}}
+                            <p class="card-ranking">Rating:
+                                <span id="stars">{{{stars}}}</span></p>
                         </div>
 
                     </div>
@@ -26,7 +25,7 @@
             <div class="card_right">
                 <img src="{{imageURL}}" alt="image" />
             </div>
-        </div> 
+        </div>
 
     </section>
 {{/with}}
