@@ -1,4 +1,4 @@
-const cast = require("../models/Cast");
+const cast = require("../../models/Cast");
 
 
 module.exports = {

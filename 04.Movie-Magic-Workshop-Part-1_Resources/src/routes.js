@@ -5,7 +5,7 @@ const {detailsController} = require('./controllers/detailsController');
 const {searchController} = require('./controllers/searchController');
 const {aboutController} = require('./controllers/aboutController');
 const { createCastGet, createCastPost } = require('./controllers/castController');
-const { attachCastController } = require('./controllers/attachController');
+const { attachCastController, attachCastPost } = require('./controllers/attachController');
 
 const router = Router();
 
@@ -20,6 +20,7 @@ router.post("/search",searchController);
 router.get("/cast",createCastGet);
 router.post("/cast",createCastPost);
 router.get("/attach/:_id",attachCastController)
+router.post("/attach/:_id",attachCastPost)
 
 
 

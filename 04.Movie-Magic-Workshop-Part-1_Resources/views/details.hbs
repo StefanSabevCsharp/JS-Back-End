@@ -26,6 +26,11 @@
                 <img src="{{imageURL}}" alt="image" />
             </div>
         </div>
+        <div class="main-cast-card">
+            {{#each cast}}
+            {{> singleCastCard}}
+            {{/each}}   
+        </div>
 
     </section>
 {{/with}}

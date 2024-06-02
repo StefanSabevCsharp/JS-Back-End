@@ -1,10 +1,10 @@
 // const fs = require("fs");
 // const path = require("path");
-const Movie = require("../models/Movie");
+const Movie = require("../../models/Movie");
 
 async function getAllMovies() {
     try {
-        let movies = Movie.find().lean();
+        let movies =  await Movie.find().lean();
         return movies;
     } catch (error) {
         console.log(error);
@@ -18,8 +18,8 @@ async function getAllMovies() {
 }
 
 async function getMovieById(id) {
-    try {
-        let movie = Movie.findById(id).lean();
+    try {  
+        let movie = Movie.findById(id).populate("cast");
         return movie;
     }catch (error) {
         console.log(error);

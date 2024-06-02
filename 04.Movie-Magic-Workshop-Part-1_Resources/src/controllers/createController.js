@@ -1,5 +1,5 @@
 // const { createMovie } = require("../service/Movie");
-const Movie = require("../models/Movie");
+const Movie = require("../../models/Movie");
 
 // const fs = require('fs');
 // const path = require('path');
