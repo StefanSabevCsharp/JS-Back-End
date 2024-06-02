@@ -11,7 +11,7 @@ const router = Router();
 router.get("/",homeController);
 router.get("/create",createControllerGet);
 router.post("/create",createControllerPost);
-router.get("/details/:id",detailsController);
+router.get("/details/:_id",detailsController);
 router.get("/search",searchController);
 router.get("/about",aboutController);
 router.post("/search",searchController);
