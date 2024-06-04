@@ -2,14 +2,16 @@
 // const path = require("path");
 const Movie = require("../../models/Movie");
 
-async function getAllMovies() {
-    try {
-        let movies =  await Movie.find().lean();
-        return movies;
-    } catch (error) {
-        console.log(error);
-        return [];
-    }
+function getAllMovies() {
+    let movies = Movie.find();
+    return movies;
+    // try {
+    //     let movies =  await Movie.find().lean();
+    //     return movies;
+    // } catch (error) {
+    //     console.log(error);
+    //     return [];
+    // }
 
     // let moviesPath = path.join(__dirname, "../config/database.json");
     // let moviesData = fs.readFileSync(moviesPath);
@@ -17,7 +19,7 @@ async function getAllMovies() {
     // return JSON.parse(moviesData);
 }
 
-async function getMovieById(id) {
+function getMovieById(id) {
     try {  
         let movie = Movie.findById(id).populate("cast");
         return movie;

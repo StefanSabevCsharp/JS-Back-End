@@ -4,8 +4,8 @@ const Movie = require("../../models/Movie");
 module.exports = {
     detailsController: async (req, res) => {
         let id = req.params._id;
-        let movie = await getMovieById(id);
-        movie = movie.toObject();
+        let movie = await getMovieById(id).lean();
+        // movie = movie.toObject();
 
         if(!movie){
             res.render("404"); 

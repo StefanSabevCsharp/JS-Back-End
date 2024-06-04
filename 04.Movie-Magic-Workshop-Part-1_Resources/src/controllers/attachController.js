@@ -6,8 +6,7 @@ const { getMovieById } = require("../service/movieService");
 module.exports = {
     attachCastController: async (req, res) => {
         let id = req.params._id;
-        let movie = await getMovieById(id);
-        movie = movie.toObject();
+        let movie = await getMovieById(id).lean();
         const allCast = await getAllCasts();
 
         //TO DO : remove already added casts 
