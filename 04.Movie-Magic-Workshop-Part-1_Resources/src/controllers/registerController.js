@@ -21,6 +21,6 @@ module.exports = {
         } 
         const hash = await bcrypt.hash(password, 10);
         await registerUser(email, hash);
-        res.redirect("/");
+        res.redirect("/auth/login");
     }
 }
