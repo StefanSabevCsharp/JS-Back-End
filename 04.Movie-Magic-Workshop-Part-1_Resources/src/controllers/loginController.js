@@ -17,7 +17,6 @@ module.exports = {
         }
         let isMatch = await checkPasswords(password, user.password);
         if (!isMatch) {
-            console.log("ima li ismatch greshka");
             return res.render("login", { error: "Incorrect password" });
         }
 
@@ -26,8 +25,8 @@ module.exports = {
             email : user.email
         }
         const token = await signPromise(payload,secret,{expiresIn : "2h"});
-
-        console.log(token);
+        res.cookie("auth-cookie",token,{httpOnly : true});
+        res.redirect("/");
 
     }
 }

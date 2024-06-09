@@ -19,8 +19,16 @@ function getMovieById(id) {
     // let movie = movies.find((x) => x.id == id);
     // return movie;
 }
+async function updateMovie(id, movie) {
+   return await Movie.findByIdAndUpdate(id, movie);
+}
+async function deleteMovie(id) {
+    return await Movie.findByIdAndDelete(id);
+}
 
 module.exports = {
     getAllMovies,
     getMovieById,
+    updateMovie,
+    deleteMovie
 };

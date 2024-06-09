@@ -21,16 +21,25 @@
 
                     <p class="disc">Description: {{description}}</p>
                 </div>
+                <div class="details-btn">
+                            <a href="/edit/{{_id}}"><button id="edit-button">Edit</button></a>
+                           <a href="/delete/{{_id}}"><button id="delete-button">Delete</button></a>
+                </div>
             </div>
             <div class="card_right">
                 <img src="{{imageURL}}" alt="image" />
             </div>
         </div>
         <div class="main-cast-card">
+            {{#if cast}}
             {{#each cast}}
             {{> singleCastCard}}
             {{/each}}   
-        </div>
+            {{else}}
+            <div class="no-cast">
+                        <p>There are no casts added yet...</p>
+             </div>
+            {{/if}}
 
     </section>
 {{/with}}
