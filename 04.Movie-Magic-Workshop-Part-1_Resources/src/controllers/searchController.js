@@ -3,7 +3,7 @@ const { getAllMovies } = require("../service/movieService");
 module.exports = {
     searchController: async (req, res) => {
         const { search, genre, year } = req.body;
-        const movies =  await getAllMovies();
+        const movies =  await getAllMovies().lean();
         //have to all validation if there is no movies
           
         const filteredMovies = movies.filter((x) => {
