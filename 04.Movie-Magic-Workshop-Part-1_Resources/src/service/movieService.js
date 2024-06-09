@@ -5,18 +5,6 @@ const Movie = require("../../models/Movie");
 function getAllMovies() {
     let movies = Movie.find();
     return movies;
-    // try {
-    //     let movies =  await Movie.find().lean();
-    //     return movies;
-    // } catch (error) {
-    //     console.log(error);
-    //     return [];
-    // }
-
-    // let moviesPath = path.join(__dirname, "../config/database.json");
-    // let moviesData = fs.readFileSync(moviesPath);
-
-    // return JSON.parse(moviesData);
 }
 
 function getMovieById(id) {
