@@ -4,6 +4,7 @@ const handlebars = require("express-handlebars");
 const { expressConfig } = require("./config/expressConfing");
 const { handlebarsConfig } = require("./config/handlebarsConfig");
 const { router } = require("./routes");
+const {authRouter} = require('./routers/authenticationRouter');
 
 const mongoose = require("mongoose");
 
@@ -13,6 +14,7 @@ const app = express();
 
 expressConfig(app);
 handlebarsConfig(app);
+app.use("/auth",authRouter);
 app.use(router);
 
 mongoose

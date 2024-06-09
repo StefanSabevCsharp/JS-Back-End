@@ -6,6 +6,7 @@ const {searchController} = require('./controllers/searchController');
 const {aboutController} = require('./controllers/aboutController');
 const { createCastGet, createCastPost } = require('./controllers/castController');
 const { attachCastController, attachCastPost } = require('./controllers/attachController');
+const { registerControllerGet } = require('./controllers/registerController');
 
 const router = Router();
 
@@ -21,6 +22,8 @@ router.get("/cast",createCastGet);
 router.post("/cast",createCastPost);
 router.get("/attach/:_id",attachCastController)
 router.post("/attach/:_id",attachCastPost)
+// router.get("/register",registerControllerGet)
+
 
 
 
