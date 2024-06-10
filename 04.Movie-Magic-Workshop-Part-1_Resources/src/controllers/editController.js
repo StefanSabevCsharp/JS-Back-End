@@ -4,6 +4,11 @@ const { getMovieById, updateMovie, deleteMovie } = require("../service/movieServ
 
 module.exports = {
     editControllerGet: async (req, res) => {
+        const user = req.user;
+        if (!user) {
+            return res.redirect("/auth/login");
+        }
+
         const id = req.params._id;
         const movie = await getMovieById(id).lean();
         res.render("edit", { movie });

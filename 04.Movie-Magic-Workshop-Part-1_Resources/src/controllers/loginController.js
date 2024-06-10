@@ -1,8 +1,8 @@
+const { secret } = require("../config/expressConfing");
 const { getUserByEmail } = require("../service/userService");
 const { checkPasswords } = require("../utils/checkPasswords");
 const { signPromise } = require("../utils/jwthelper");
 
-const secret = "dasjasdjsdjaksadsdsakdkdsalkldsaklsadkljq2klejkl21jdklk21jl1d21"
 
 
 module.exports = {

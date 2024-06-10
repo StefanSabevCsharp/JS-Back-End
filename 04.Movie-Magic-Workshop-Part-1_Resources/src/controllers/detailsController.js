@@ -1,5 +1,5 @@
 const { getMovieById } = require("../service/movieService");
-const Movie = require("../../models/Movie");
+
 
 module.exports = {
     detailsController: async (req, res) => {
