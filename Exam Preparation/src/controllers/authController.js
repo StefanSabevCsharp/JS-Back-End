@@ -1,19 +1,17 @@
 const router = require("express").Router();
 const authService = require("../services/authService");
-const cookieParser = require("cookie-parser");
 
-router.get("/register", (req, res) => {
+
+router.get("/register", (req, res) => { 
     res.render("register");
 });
 
 router.post("/register", async (req, res) => {
     const userData = req.body;
-    try {
-        await authService.register(userData);
-        return res.redirect("/auth/login");
-    } catch (err) {
-        return res.redirect("/auth/register", { error: err.message });
-    }
+  
+    const token = await authService.register(userData);
+    res.cookie("auth", token);
+    return res.redirect("/");
 });
 
 router.get("/login", (req, res) => {
@@ -25,6 +23,11 @@ router.post("/login", async (req, res) => {
     const token = await authService.login(userData);
     res.cookie("auth", token); 
     return res.redirect("/");
+});
+
+router.get("/logout", (req, res) => {
+    res.clearCookie("auth");
+    res.redirect("/");
 });
 
 module.exports = router;

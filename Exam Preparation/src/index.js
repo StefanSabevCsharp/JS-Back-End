@@ -4,7 +4,7 @@ const { configExpress } = require("./config/configExpress");
 const { configHandlebars } = require("./config/configHandlebars");
 const mongoose = require("mongoose");
 const router = require("../routes");
-const cookieParser = require("cookie-parser");
+
 
 const app = express();
 configExpress(app);
