@@ -5,10 +5,12 @@ const userSchema = new mongoose.Schema({
     username:{
         type: String,
         required: true,
+        unique: true,
     },
     email:{
         type: String,
         required: true,
+        unique: true,
     },
     password:{
         type: String,
@@ -24,12 +26,12 @@ userSchema.pre("save",async function() {
     this.password = await bcrypt.hash(this.password, 11);
 });
 
-userSchema.virtual("repass")
-.set(function(value){
-    if(value !== this.password){
-        throw new Error("Passwords don't match");
-    }
-});
+// userSchema.virtual("repass")
+// .set(function(value){
+//     if(value !== this.password){
+//         throw new Error("Passwords don't match");
+//     }
+// });
 
 const User = mongoose.model('User', userSchema);
 
