@@ -1,5 +1,6 @@
 const jwt = require("../lib/jwt");
 const SECRET = require("../lib/jwt").SECRET;
+const dataService = require("../services/dataService");
 
 exports.authMiddlewear = async (req, res, next) => {
 
@@ -33,6 +34,16 @@ exports.isAuth = (req,res,next) => {
 exports.isLogged = (req,res,next) => {
 
   if(req.user){
+    return res.redirect("/");
+  }
+  next();
+}
+
+exports.isOwner = async (req,res,next) => {
+  
+  const course = await dataService.getOne(req.params.id).populate("owner").lean();
+
+  if(course.owner._id != req.user._id){
     return res.redirect("/");
   }
   next();

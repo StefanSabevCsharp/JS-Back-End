@@ -29,3 +29,20 @@ exports.create = async (req, res) => {
         $push: { createdCourses: createdCourse._id },
     });
 };
+
+
+exports.edit = async (req, res) => {
+    const { title, type, certificate, image, description, price } = req.body;
+    if (!title || !type || !certificate || !image || !description || !price) {
+        throw { message: "All fields are required!" };
+    }
+    
+    await Course.findByIdAndUpdate(req.params.id, {
+        title,
+        type,
+        certificate,
+        image,
+        description,
+        price,
+    });
+};
