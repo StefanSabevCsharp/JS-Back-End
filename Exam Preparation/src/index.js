@@ -1,34 +1,18 @@
-const express = require('express');
-const handlebars = require('express-handlebars');
-const { configExpress } = require('./config/configExpress');
-const { configHandlebars } = require('./config/configHandlebars');
-const { configDB } = require('./config/configDB');
-const homeController = require('./controllers/homeController');
+const express = require("express");
+const handlebars = require("express-handlebars");
+const { configExpress } = require("./config/configExpress");
+const { configHandlebars } = require("./config/configHandlebars");
+const mongoose = require("mongoose");
+const router = require("../routes");
+const cookieParser = require("cookie-parser");
 
 const app = express();
-const PORT = 3000;
-
 configExpress(app);
 configHandlebars(app);
 
-app.use(homeController);
+async function start() {
+    await mongoose.connect("mongodb://localhost:27017/examPrep").then(console.log("Connected to DB"));
+    app.listen(3000, () => console.log("Server is listening on port 3000"));
+};
 
-async function startServer() {
-    try {
-        await configDB();
-        app.listen(PORT, () => {
-            console.log(`Server is listening on port ${PORT}`);
-        });
-    } catch (error) {
-        console.error('Failed to start the server', error);
-    }
-}
-startServer();
-
-
-
-
-
-
-
-
+start();
