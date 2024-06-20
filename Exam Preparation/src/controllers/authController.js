@@ -27,9 +27,15 @@ router.get("/login", (req, res) => {
 router.post("/login", async (req, res) => {
     const userData = req.body;
 
-    const token = await authService.login(userData);
-    res.cookie("auth", token);
-    return res.redirect("/",{error: getErrorMessage(err), userData});
+    try{
+        const token = await authService.login(userData);
+        res.cookie("auth", token);
+        res.redirect("/");
+    }catch(err){
+        return res.render("login",{error: getErrorMessage(err), userData});
+    }
+
+    
 });
 
 router.get("/logout", (req, res) => {
