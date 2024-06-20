@@ -4,17 +4,19 @@ const jwt = require("../lib/jwt");
 const SECRET = require("../lib/jwt").SECRET;
 
 exports.register = async (userData) => {
+  
     if (userData.password !== userData.repass) {
         throw new Error("Passwords do not match");
     }
     const user = await User.findOne({ email: userData.email });
     if (user) {
-        throw new Error("Email is already taken");
+        throw new Error("User already exists");
     }
-    const createdUser = User.create(userData);
+    
+    const createdUser = await User.create(userData);
     const token = await generateToken(createdUser);
-
-    return token;
+    
+    return token; 
 };
 
 exports.login = async (userData) => {
