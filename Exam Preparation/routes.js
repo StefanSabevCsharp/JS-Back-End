@@ -8,5 +8,10 @@ router.use("/auth",authController);
 router.use("/details",detailsController);
 
 
+router.use("*", (req, res) => {
+    res.render("404");
+});
+
+
  
 module.exports = router;

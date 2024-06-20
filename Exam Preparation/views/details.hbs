@@ -19,14 +19,22 @@
     <div class="details-container-content">
         <p>{{description}}</p>
     </div>
+    {{#if isAuthenticated}}
     <div class="btn-container">
         <!-- Only for registered user and creator of the course-->
+        {{#if isOwner}}
         <a href="#">Edit</a>
         <a href="#">Delete</a>
         <!-- logged in user who has not yet sign up for the course-->
-        <a href="#">Sign up</a>
-        <!-- logged in user who has already sign up for the course-->
+        {{else if isSubscribed}}
         <p class="sign-up">You've already signed up for this course!</p>
+        {{else}}
+        <a href="/details/{{_id}}/sign-up">Sign up</a>
+        <!-- logged in user who has already sign up for the course-->
+        
+        {{/if}}
+
 
     </div>
+    {{/if}}
 </div>
