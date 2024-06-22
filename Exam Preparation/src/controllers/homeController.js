@@ -3,6 +3,7 @@ const dataService = require("../services/dataService");
 const Course = require("../models/Course");
 const { isAuth, isOwner } = require("../middlewears/authMiddlewear");
 const userService = require("../services/userService");
+const { getErrorMessage } = require("../utils/errorParser");
 
 router.get("/", async (req, res) => {
     const lastCourses = await dataService.getLastThree().lean();
@@ -59,15 +60,16 @@ router.get("/delete/:id", isAuth, isOwner, async (req, res) => {
 });
 
 router.get("/subscribe/:id", isAuth, async (req, res) => {
-    console.log(req.params.id, req.user._id);
+    
     try {
-        console.log(req.params.id, req.user._id);
+        
         await userService.subscribe(req.params.id, req.user._id);
+        console.log("Subscribed");
         res.redirect(`/details/${req.params.id}`);
-    } catch (err) {
+    } catch (err) { 
         console.log(err);
-        res.render("404");
+        res.redirect(`/details/${req.params.id}`);
     }
 });
-
+ 
 module.exports = router;
