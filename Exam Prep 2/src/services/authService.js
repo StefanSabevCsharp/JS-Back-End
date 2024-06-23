@@ -40,7 +40,6 @@ function generateToken(userData){
     const id = userData._id;
     const payLoad = {
         _id: id,
-        username: userData.username,
         email: userData.email,
     };
     

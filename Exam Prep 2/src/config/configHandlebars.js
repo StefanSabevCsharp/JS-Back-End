@@ -7,6 +7,7 @@ function configHandlebars(app){
     app.engine("hbs", hbs.engine);
     app.set("view engine", "hbs");
     
+    
 }
 
 module.exports = {configHandlebars}; 

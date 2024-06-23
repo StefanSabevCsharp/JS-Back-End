@@ -10,21 +10,19 @@ router.get("/register",isLogged, (req, res) => {
 
 router.post("/register",isLogged, async (req, res) => {
     const userData = req.body;
-
+    
     try {
-        console.log(userData);
         const token = await authService.register(userData);
         res.cookie("auth", token);
         return res.redirect("/");
 
     } catch (err) {
-        console.log(getErrorMessage(err));
         res.render("register",{ error: getErrorMessage(err), userData});
     }
 });
 
 router.get("/login",isLogged, (req, res) => {
-    res.render("login");
+    res.render("login"); 
 });
 router.post("/login", isLogged,async (req, res) => {
     const userData = req.body;
