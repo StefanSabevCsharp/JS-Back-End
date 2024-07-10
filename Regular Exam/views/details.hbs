@@ -1,0 +1,33 @@
+<article class="recipe-detail">
+    <img src="{{image}}" alt="{{title}}" />
+    <h2>{{title}}</h2>
+    <p>{{description}}</p>
+
+    <h3>-----------------------------------------------------</h3>
+
+    <h3>Ingredients:</h3>
+    <p>{{ingredients}}</p>
+
+    <h3>-----------------------------------------------------</h3>
+
+    <h3>Instructions:</h3>
+    <p>{{instructions}}</p>
+
+    <h3>-----------------------------------------------------</h3>
+
+    <h3>People Who Recommend: {{numberOfLikes}}</h3>
+</article>
+
+<div class="command">
+    {{#if isOwner}}
+        <a href="/details/{{_id}}/edit">Edit</a>
+        <a href="/details/{{_id}}/delete">Delete</a>
+    {{else if isLoggedIn}}
+        {{#if isLiked}}
+            <p>You've already recommended this recipe!</p>
+        {{else}}
+            <a href="/details/{{_id}}/like">Recommend</a>
+        {{/if}}
+
+    {{/if}}
+</div>
